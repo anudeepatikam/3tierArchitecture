@@ -1,0 +1,37 @@
+﻿@model IEnumerable<EMS.PresentationLayer.Models.User>
+
+@{
+    ViewData["Title"] = "User List";
+}
+
+<h1>User List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.Name</td>
+                <td>@user.Address</td>
+                <td>@user.Age</td>
+                <td>@user.Email</td>
+                <td class="ml-3">
+                  
+                    <a href="@Url.Action("Edit", new { id = user.Id })" class="btn btn-warning">Edit</a>
+                    <a href="@Url.Action("Delete", new { id = user.Id })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

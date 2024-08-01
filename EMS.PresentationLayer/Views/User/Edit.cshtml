@@ -1,0 +1,46 @@
+﻿@model EMS.PresentationLayer.Models.User
+
+@{
+    ViewData["Title"] = "Edit Students";
+}
+
+<h1>Edit Students</h1>
+<form asp-action="Edit" method="post">
+    <div class="mt-3">
+        <label class="form-label">ID</label>
+        <input type="text" class="form-control" asp-for="Id" readonly />
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Address</label>
+        <input type="text" class="form-control" asp-for="Address" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Age</label>
+        <input type="text" class="form-control" asp-for="Age" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control" asp-for="Email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="submit" class="btn btn-danger ms-3" asp-controller="Students" asp-action="Delete">Delete</button>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
